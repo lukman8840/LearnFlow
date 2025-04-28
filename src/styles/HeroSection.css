@@ -30,6 +30,7 @@
 .cta-buttons{
     display: flex;
     gap: 20px;
+    justify-content: center;
 }
 .cta-btn {
     padding: 15px 30px;
@@ -61,11 +62,134 @@
     gap: 20px;
 }
 .course-card {
-    padding: 20px;
-    border-radius: 8px;
+    max-width: 100%;
+    height: 120px;
+    border-radius: 12px;
     background-color: #f5f5f5;
     text-align: center;
     font-weight: bold;
     font-size: 1rem;
+    border: 1px solid #333;
     transition: background-color 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    min-height: 80px;
+    box-sizing: border-box;
+    cursor: pointer;
+}
+.course-card:hover{
+    opacity: 0.7;
+}
+
+.course-icon {
+    margin: 20px;
+    font-size: 25px;
+}
+
+.course-icon h3 {
+    font-size: 1rem;
+}
+.info {
+    display: flex;
+    justify-content: center;
+}
+.course-card p{
+    margin: 0;
+    font-size: 0.8rem;
+}
+
+.how-it-works {
+    padding: 60px 20px;
+    text-align: center;
+    /* background-color: #f0f4f8; */
+}
+.how-container {
+    width: 1000px;
+    margin: auto 0;
+}
+.how-it-works h3 {
+    font-size: 30px;
+    color: #021A42;
+}
+.steps-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+.step-card {
+    padding: 30px;
+    border-radius: 12px;
+    background-color: #fff;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+.step-card:hover {
+    transform: translate(-10px);
+}
+.step-icon {
+    font-size: 50px;
+    margin-bottom: 30px;
+    color: #4f8ef7;;
+}
+.step-card h3 {
+    font-size: 20px;
+    margin-bottom: 10px;
+    color: #021A42;
+}
+.step-card p {
+    font-size: 16px;
+    color: #555;
+}
+.why-choose-us {
+    padding: 60px 20px;
+    color: #fff;
+}
+.why-container {
+    display: flex;
+    align-items: center;
+    margin: 0 auto;
+    flex-wrap: wrap;
+    gap: 40px;
+    max-width: 1200px;
+}
+.why-text {
+    flex: 1;
+}
+.why-text h2 {
+    font-size: 36px;
+    margin-bottom: 20px;
+    color: #021a42;
+}
+.why-text p {
+    margin-bottom: 20px;
+    font-size: 20px;
+    line-height: 1.6;
+    color: #555;
+}
+.why-list {
+    list-style: none;
+    padding: 0;
+}
+.why-list li {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background-color: #f8f8f8;
+    padding: 12px 16px;
+    margin-bottom: 12px;
+    border-radius: 8px;
+    font-size: 18px;
+    color: #021A42;
+    font-weight: 500;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    transition: background-color 0.3s ease;
+}
+.why-image {
+    flex: 1;
+    text-align: center;
+}
+.why-image img {
+    width: 100%;
+    object-fit: cover;
+    border-radius: 12px;
 }
