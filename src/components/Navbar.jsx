@@ -9,7 +9,7 @@ const Navbar = () => {
       <div className="left-section">
         <div className="logo">
            <h1>LearnFlow</h1>
-      </div>
+        </div>
         <div className="nav-links">
             <a href="#home">Home</a>
             <a href="#courses">Courses</a>
@@ -17,14 +17,14 @@ const Navbar = () => {
             <a href="#contact">Contact</a>
         </div>
       </div>
-        <div className="right-section">
+      <div className="right-section">
         <button className="login">
-          Login
+          <span className='login-text'>Login</span>
           <FaSignInAlt style={{marginLeft: '18px'}}/>
-          </button>
-        </div>
+        </button>
       </div>
+    </div>
   )
 }
 
-export default Navbar
+export default Navbar;

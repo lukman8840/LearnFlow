@@ -1,12 +1,12 @@
-
 .nav-container {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 25px 40px;
+    padding: 20px 40px;
     background-color: #fff;
     box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
 }
+
 .left-section {
     display: flex;
     align-items: center;
@@ -25,6 +25,7 @@
     display: flex;
     gap: 20px;
 }
+
 .nav-links a {
     padding: 0px;
     margin-left: 30px;
@@ -34,14 +35,18 @@
     text-transform:capitalize;
     transition: color 0.3s ease;
 }
+
 .nav-links a:hover {
     color: #4f8ef7;
 }
+
 .right-section {
     display: flex;
     align-items: end;
 }
+
 .login {
+    position: relative; 
     background-color: #4f8ef7;
     padding: 20px 50px;
     font-size: 16px;
@@ -51,5 +56,14 @@
     border: none;
     border-radius: 8px;
     cursor: pointer;
-    transition: backgroud-color 0.3s ease;
+    transition: background-color 0.3s ease; 
+}
+
+.login-text {
+    display: inline-block;
+}
+
+.login:hover .hover-text {
+    display: inline-block;
+    opacity: 1;
 }
