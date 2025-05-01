@@ -4,14 +4,18 @@ import { FaSignInAlt } from 'react-icons/fa'
 import { Link, useNavigate } from 'react-router-dom'
 
 const Navbar = () => {
-  const navigate = useNavigate()
+
+  const navigate = useNavigate();
+
   const [showDropdown, setShowDropdown] = useState(false)
 
   return (
     <div className='nav-container'>
       <div className="left-section">
         <div className="logo">
-           <h1>LearnFlow</h1>
+
+           <h1 onClick={() => navigate('./')}>LearnFlow</h1>
+          
         </div>
         <div className="nav-links">
             <Link to="/">Home</Link>

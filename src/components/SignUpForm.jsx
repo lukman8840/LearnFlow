@@ -1,4 +1,6 @@
 import React, { useState } from 'react'
+import '../styles/Auth.css'
+import { Link } from 'react-router-dom';
 // import { useSearchParams } from 'react-router-dom'
 
 const SignUpForm = () => {
@@ -8,6 +10,7 @@ const SignUpForm = () => {
         email: '',
         phone: '',
         course: '',
+        age: '',
         password: '',
         confirmPassword: ''
     });
@@ -28,7 +31,9 @@ const SignUpForm = () => {
     }
   return (
     <div className='auth-container'>
-        <h2>Sign Up</h2>
+        <h2>Join LearnFlow</h2>
+        <p className='auth-tagline'>Start your journey to digital mastery. Get access to career-ready skills, personalized just for you.</p>
+
     <form onSubmit={handleSubmit} className='auth-form'>
         <input 
             type='text' 
@@ -37,6 +42,7 @@ const SignUpForm = () => {
             value={formData.name} 
             onChange={handleChange} 
             required  
+            autoFocus
         />
         <input 
             type='email' 
@@ -47,8 +53,8 @@ const SignUpForm = () => {
             required
         />
         <input 
-            type='phone' 
-            name='tel' 
+            type='tel' 
+            name='phone' 
             placeholder='Enter Your Phone Number'
             value={formData.phone}
             onChange={handleChange}
@@ -60,14 +66,33 @@ const SignUpForm = () => {
             <option value="gmail">Gmail Basics</option>
             <option value="docs">Google Docs</option>
             <option value="ai">AI Tools</option>
-            <option value="research">Internet Research</option>
+            <option value="google-drive">Google Drive and File Storage</option>
+            <option value="research">Internet Research Skill</option>
         </select>
 
+            <select 
+                name='age'
+                value={formData.age}
+                onChange={handleChange}
+                required            
+            >
+                <option value="">Select Age Range</option>
+                <option value="under18">Under 18</option>
+                <option value="18-24">18 - 24</option>
+                <option value="25-34">25 - 34</option>
+                <option value="35-44">35 - 44</option>
+                <option value="45plus">45 and above</option>
+            </select>
         <input 
             name='password' 
             type='password' 
             placeholder='Enter Your Password'
-            value={formData.password}
+            value={formData.password && (
+                <small style={{ color: formData.password.length < 8 ? 'red' : 'green'}}>{formData.password.length < 8
+                    ? 'Password to short (minmium of 8 characters)'
+                    : 'Strong password'
+                }</small>
+            )}
             onChange={handleChange}
             required
         />
@@ -82,7 +107,7 @@ const SignUpForm = () => {
 
         <button type='submit'>Sign Up </button>
     </form>
-      
+    <p className='have-an-account'>Already have an account? <Link to='/login'>Login here</Link> </p>
     </div>
   )
 }

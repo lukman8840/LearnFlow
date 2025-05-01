@@ -5,10 +5,12 @@ import About from './components/pages/About';
 import Contact from './components/pages/Contact';
 import LoginForm from './components/LoginForm';
 import SignUpForm from './components/SignUpForm';
+import Navbar from './components/Navbar';
 
 function App() {
   return (
     <Router>
+      <Navbar />
       <Routes>
         <Route path='/' element={<Home />}/>
         <Route path='/about' element={<About />} />

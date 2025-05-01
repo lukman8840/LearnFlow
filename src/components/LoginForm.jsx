@@ -1,4 +1,6 @@
 import React, { useState } from 'react'
+import '../styles/Auth.css'
+import { Link } from 'react-router-dom';
 
 const LoginForm = () => {
     
@@ -39,7 +41,11 @@ const LoginForm = () => {
                 required   
             />
             <button type='submit'>Login</button>
-        </form>      
+        </form>    
+        <div className="authcontainer">
+            <p>Forget Password? <Link to='/forget-password'>Click here</Link></p>  
+            <p>Dont have an account? <Link to='/signup'>SignUp here</Link> </p>
+        </div>
     </div>
   )
 }
