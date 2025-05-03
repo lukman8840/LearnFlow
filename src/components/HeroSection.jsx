@@ -1,20 +1,59 @@
-import React from 'react';
+import React, { useState } from 'react';
 import '../styles/HeroSection.css';
 import { SiGmail, SiGooglechrome, SiGooglecloud, SiGoogledocs, SiHackerrank, SiOpenai } from 'react-icons/si';
 import whyImage from '../assets/Hero-image.webp'
+import { useNavigate } from 'react-router-dom';
 
 const HeroSection = () => {
+  const [showModal, setShowModal] = useState(false);
+
+  const navigate = useNavigate();
+
+  const handleLearnMore = () => {
+      setShowModal(true);
+  }
+
+    const closeModal = () => {
+      setShowModal(false);
+    }
   return (
     <div className='hero-section'>
-      {/* Top Text Content */}
       <div className="hero-content">
         <h1>Unlock Your Future with AI-powered Learning</h1>
         <p>
-          Learn the skills that matter today. Personalized courses designed to make you career-ready, powered by AI. <span>Learn more</span>
+          Learn the skills that matter today. Personalized courses designed to make you career-ready, powered by AI.
+           <span onClick={handleLearnMore} style={{ color:  'blue', cursor: 'pointer'}}>Learn more</span>
         </p>
 
+          { showModal && 
+            
+              <div className='modal-overlay'>
+                <div className="modal-content">
+                  
+                  <button className="close-btn" onClick={closeModal}>X</button>
+                    <h2>About LearnFlow</h2>
+                     <p className='learnFlow'>LearnFlow is an AI-powered learning platform that helps you develop the skills you need to succeed in the modern workforce. We provide personalized, career-focused courses tailored to your needs.</p>
+                     <h3 className='features'>How LearnFlow Works</h3>
+                     <p className='paragraph'>Learn at your own pace with AI-powered personalized lessons. Here's how it works:</p>
+                     <ol>
+                       <li><strong>Choose a Skill:</strong> Pick from our wide range of career-focused courses.</li>
+                       <li><strong>Learn in Micro Sessions:</strong> Access short, personalized lessons anytime, anywhere.</li>
+                       <li><strong>Apply Your Skills:</strong> Use your new skills to grow your career and open new opportunities.</li>
+                     </ol>
+
+                     <h3 className='features'>Key Features</h3>
+                      <ul>
+                          <li>🎯 Personalized Learning Paths</li>
+                          <li>📚 Career-Relevant Courses</li>
+                          <li>⚡ Fast, Micro-Learning Sessions</li>
+                           <li>🌍 Accessible Anywhere, Anytime</li>
+                      </ul>
+                  </div>
+                
+              </div>}
+
         <div className="cta-buttons">
-          <button className="cta-btn primary">Get Started</button>
+          <button className="cta-btn primary" onClick={() => navigate('./login')}>Get Started</button>
         </div>
       </div>
 
@@ -82,7 +121,7 @@ const HeroSection = () => {
             <div className="step-card">
               <div className="step-icon">📝</div>
               <h3>1. Choose a Skill</h3>
-              <p>Pick from our wide range of career focused courses</p>
+              <p className='how-p'>Pick from our wide range of career focused courses</p>
             </div>
 
             <div className="step-card">

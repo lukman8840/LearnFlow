@@ -193,3 +193,34 @@
     object-fit: cover;
     border-radius: 12px;
 }
+
+
+
+
+
+
+@media (max-width: 768px) {
+    .hero-section{
+        width: 650px;
+    } 
+    .courses-grid{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .steps-grid {
+        display: flex;
+        flex-direction: column;
+    }
+    .step-card {
+        width: 100%;
+    }
+    .how-description {
+        font-size: 14px;
+        margin: 20px;
+        padding: 12px;
+        width: 100%;
+        justify-content: center;
+        align-items: center;
+        text-align: justify;
+    }
+}

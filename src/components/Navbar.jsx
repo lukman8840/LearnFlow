@@ -6,8 +6,13 @@ import { Link, useNavigate } from 'react-router-dom'
 const Navbar = () => {
 
   const navigate = useNavigate();
-
+  const [showMenu, setShowMenu] = useState(false)
   const [showDropdown, setShowDropdown] = useState(false)
+
+
+  const toggelMenu = () => {
+    setShowMenu(prev => !prev);
+  }
 
   return (
     <div className='nav-container'>
@@ -17,7 +22,7 @@ const Navbar = () => {
            <h1 onClick={() => navigate('./')}>LearnFlow</h1>
           
         </div>
-        <div className="nav-links">
+        <div className={`nav-links ${showMenu ? 'show' : ''}`}>
             <Link to="/">Home</Link>
 
             <div className='dropdown'
@@ -44,6 +49,10 @@ const Navbar = () => {
           <span className='login-text'>Login</span>
           <FaSignInAlt style={{marginLeft: '18px'}}/>
         </button>
+        <button className="menu-toggle" onClick={toggelMenu}>
+          {showMenu ? 'X' : '☰'}
+        </button>
+
       </div>
     </div>
   )

@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import '../styles/Auth.css'
 import { Link } from 'react-router-dom';
-// import { useSearchParams } from 'react-router-dom'
+
 
 const SignUpForm = () => {
 
@@ -19,7 +19,7 @@ const SignUpForm = () => {
             ...prev,
             [e.target.name]: e.target.value
         }))
-        console.log('Signing up with:', formData);
+       
     }
 
     const handleSubmit = (e) => {
@@ -28,6 +28,7 @@ const SignUpForm = () => {
             alert('Passwords do not match!')
             return;
         }
+        console.log('Signing up with:', formData);
     }
   return (
     <div className='auth-container'>
@@ -61,7 +62,12 @@ const SignUpForm = () => {
             required
         />
 
-        <select name='course'>
+        <select 
+            name='course'
+            value={formData.course}
+            onChange={handleChange}
+            required
+            >
             <option value="">Select Course</option>
             <option value="gmail">Gmail Basics</option>
             <option value="docs">Google Docs</option>
@@ -87,15 +93,19 @@ const SignUpForm = () => {
             name='password' 
             type='password' 
             placeholder='Enter Your Password'
-            value={formData.password && (
-                <small style={{ color: formData.password.length < 8 ? 'red' : 'green'}}>{formData.password.length < 8
-                    ? 'Password to short (minmium of 8 characters)'
-                    : 'Strong password'
-                }</small>
-            )}
+            value={formData.password} 
             onChange={handleChange}
             required
         />
+            {formData.password && (
+                <small>
+                    {formData.password.length < 8
+                        ? 'Password too short (minimium of 8 characters)'
+                        : 'Strong password'
+                    }
+                </small>
+            )}
+
         <input 
             name='confirmPassword' 
             type='password' 
@@ -104,7 +114,6 @@ const SignUpForm = () => {
             onChange={handleChange}
             required
         />
-
         <button type='submit'>Sign Up </button>
     </form>
     <p className='have-an-account'>Already have an account? <Link to='/login'>Login here</Link> </p>
