@@ -1,10 +1,55 @@
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
 import '../styles/Auth.css'
 import { Link } from 'react-router-dom';
+import { UserContext } from './UserContext';
+import GmailImage from '../assets/Gmail_basics.png';
+import GoogleImage from '../assets/Google_docs.jpeg'
+import InternetImage from '../assets/internet_research.jpeg';
+import AIImage from '../assets/AI-Tools.jpeg';
+import GoogleDriveImage from '../assets/file_storage.png';
+import OnlineImage from '../assets/Online_safety.png'
+
 
 
 const SignUpForm = () => {
 
+    const {setUserData} = useContext(UserContext)
+    const [name, setName] = useState('');
+    const [selectedCourse, setSelectedCourse] = useState('');
+    
+    const courses = [
+        {
+            title: "Gmail Basics",
+            description: "Master how to send emails, manage inboxes, and use attachments professionally.",
+            image: `${GmailImage}`
+        },
+        {
+            title: "Google Docs Mastery",
+            description: "Learn to create, edit, and collaborate on documents like a pro",
+            image: `${GoogleImage}`
+        },
+        {
+            title: "Internet Research skills",
+            description: "Develop smart strategies for finding reliable information online quickly.",
+            image: `${InternetImage}`
+        },
+        {
+            title: "Introduction To AI Tools",
+            description: "Discover how AI like ChatGPT can boost your learning and productivity.",
+            image: `${AIImage}`
+        },
+        {
+            title: "Google Drive anf File Storage",
+            description: "earn how to organize, store, and access files anywhere, safely.",
+            image: `${GoogleDriveImage}`
+        },
+        {
+            title: "Online Safety and Security",
+            description: "Protect your accounts and stay safe while navigating the internet.",
+            image: `${OnlineImage}`
+        }
+
+    ]
     const [formData, setFormData] = useState({
         name: '',
         email: '',

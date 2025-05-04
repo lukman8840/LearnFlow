@@ -8,9 +8,11 @@ import SignUpForm from './components/SignUpForm';
 import Navbar from './components/Navbar';
 import ForgetPassword from './components/ForgetPassword';
 import Dashboard from './components/Dashboard';
+import { UserProvider } from './components/UserContext';
 
 function App() {
   return (
+    <UserProvider>
     <Router>
       <Navbar />
       <Routes>
@@ -23,6 +25,7 @@ function App() {
         <Route path='/dashboard' element={<Dashboard />} />
       </Routes>      
     </Router>
+    </UserProvider>
   );
 }
 

@@ -1,8 +1,14 @@
 import React, { useState } from 'react';
 import '../styles/HeroSection.css';
-import { SiGmail, SiGooglechrome, SiGooglecloud, SiGoogledocs, SiHackerrank, SiOpenai } from 'react-icons/si';
+// import { SiGmail, SiGooglechrome, SiGooglecloud, SiGoogledocs, SiHackerrank, SiOpenai } from 'react-icons/si';
 import whyImage from '../assets/Hero-image.webp'
 import { useNavigate } from 'react-router-dom';
+import GmailImage from '../assets/Gmail_basics.png'
+import GoogleDocsImage from '../assets/Google_docs.jpeg'
+import AIImage from '../assets/AI-Tools.jpeg'
+import InternetImage from '../assets/internet_research.jpeg'
+import DriveImage from '../assets/file_storage.png' 
+import OnlineImage from '../assets/Online_safety.png'
 
 const HeroSection = () => {
   const [showModal, setShowModal] = useState(false);
@@ -61,7 +67,8 @@ const HeroSection = () => {
         Join the AI revolution and build a career that lasts. Discover the possibilities with our personalized learning approach.
       </p>
       <p>What You will Learn</p>
-      <section className="courses-grid">
+
+      {/* <section className="courses-grid">
         <div className="course-card">
           <div className="info">
           <SiGmail className='course-icon' style={{color: '#d44638'}}/>
@@ -109,7 +116,51 @@ const HeroSection = () => {
           </div>
           <p>Protect your accounts and staysafe while navigating the internet</p>
           </div>
-      </section>
+      </section> */}
+
+        <section className="courses-grid">
+          <div className="course-card">
+            <img src={GmailImage} alt="Gmail-Basics" className='course-image'/>
+            <h3>Gmail Basics</h3>
+            <p>Master how to send emails, manage inboxes, and use attachments professionally.</p>
+            <button className="enroll" onClick={() => navigate('/login')}>Enroll</button>
+          </div>
+
+          <div className="course-card">
+            <img src={GoogleDocsImage} alt="Gmail-Basics" className='course-image'/>
+            <h3>Google Docs Mastery</h3>
+            <p>Learn to create, edit, and collaborate on documents like a pro.</p>
+            <button className="enroll" onClick={() => navigate('/login')}>Enroll</button>
+          </div>
+
+          <div className="course-card">
+            <img src={InternetImage} alt="Gmail-Basics" className='course-image'/>
+            <h3>Internet Research Skills</h3>
+            <p>Develop smart strategies for finding reliable information online quickly.</p>
+            <button className="enroll" onClick={() => navigate('/login')}>Enroll</button>
+          </div>
+
+          <div className="course-card">
+            <img src={AIImage} alt="Gmail-Basics" className='course-image'/>
+            <h3>Introduction to AI Tools</h3>
+            <p>Discover how AI like ChatGPT can boost your learning and productivity.</p>
+            <button className="enroll" onClick={() => navigate('/login')}>Enroll</button>
+          </div>
+
+          <div className="course-card">
+            <img src={DriveImage} alt="Gmail-Basics" className='course-image'/>
+            <h3>Google Drive & File Storage</h3>
+            <p>Learn how to organize, store, and access files anywhere, safely.</p>
+            <button className="enroll" onClick={() => navigate('/login')}>Enroll</button>
+          </div>
+
+          <div className="course-card">
+            <img src={OnlineImage} alt="Gmail-Basics" className='course-image'/>
+            <h3>Online Safety & Security</h3>
+            <p>Protect your accounts and stay safe while navigating the internet.</p>
+            <button className="enroll" onClick={() => navigate('/login')}>Enroll</button>
+          </div>
+        </section>
 
       <section className="how-it-works">
         <div className="how-container">
