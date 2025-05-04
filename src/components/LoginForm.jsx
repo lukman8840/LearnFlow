@@ -1,8 +1,9 @@
 import React, { useState } from 'react'
 import '../styles/Auth.css'
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 const LoginForm = () => {
+    const navigate = useNavigate()
     
     const [formData, setFormData] = useState({
         email: '',
@@ -18,6 +19,8 @@ const LoginForm = () => {
     const handleSubmit = (e) => {
         e.preventDefault();
         console.log('logging in with:', formData)
+        navigate('/dashboard')
+        
     }
 
   return (

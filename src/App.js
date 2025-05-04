@@ -7,6 +7,7 @@ import LoginForm from './components/LoginForm';
 import SignUpForm from './components/SignUpForm';
 import Navbar from './components/Navbar';
 import ForgetPassword from './components/ForgetPassword';
+import Dashboard from './components/Dashboard';
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
         <Route path='/login' element={<LoginForm />} />
         <Route path='/signup' element={<SignUpForm />}/>
         <Route path='/forget-password' element={<ForgetPassword />}/>
+        <Route path='/dashboard' element={<Dashboard />} />
       </Routes>      
     </Router>
   );

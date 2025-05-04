@@ -5,7 +5,6 @@ const ForgetPassword = () => {
     const [email, setEmail] = useState('');
     const [submitted, setSubmitted] = useState(false);
 
-
     const handleSubmit = (e) => {
         e.preventDefault();
         setSubmitted(true);
