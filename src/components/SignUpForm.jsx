@@ -79,18 +79,15 @@ const SignUpForm = () => {
         const courseDetails = courses.find(c => c.title === formData.course);
         setUserData({
           name: formData.name,
-          course: courseDetails
+          course: courseDetails,
+          enrolledAt: new Date().toLocaleDateString()
         });
     
         console.log('Signing up with:', formData);
         navigate('/dashboard');
       };
 
-      setUserData({
-        name: formData.name,
-        course: formData.course,
-        enrolledAt: new Date().toLocaleDateString() // or .toISOString()
-      });
+      
   return (
     <div className='auth-container'>
         <h2>Join LearnFlow</h2>
