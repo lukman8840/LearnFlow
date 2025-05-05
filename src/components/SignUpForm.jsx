@@ -1,6 +1,6 @@
 import React, { useContext, useState } from 'react'
 import '../styles/Auth.css'
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { UserContext } from './UserContext';
 import GmailImage from '../assets/Gmail_basics.png';
 import GoogleImage from '../assets/Google_docs.jpeg'
@@ -12,11 +12,12 @@ import OnlineImage from '../assets/Online_safety.png'
 
 
 const SignUpForm = () => {
+    const navigate = useNavigate()
 
     const {setUserData} = useContext(UserContext)
     const [name, setName] = useState('');
     const [selectedCourse, setSelectedCourse] = useState('');
-    
+
     const courses = [
         {
             title: "Gmail Basics",
@@ -39,7 +40,7 @@ const SignUpForm = () => {
             image: `${AIImage}`
         },
         {
-            title: "Google Drive anf File Storage",
+            title: "Google Drive and File Storage",
             description: "earn how to organize, store, and access files anywhere, safely.",
             image: `${GoogleDriveImage}`
         },
@@ -63,18 +64,33 @@ const SignUpForm = () => {
         setFormData(prev => ({
             ...prev,
             [e.target.name]: e.target.value
+
         }))
-       
     }
 
+    
     const handleSubmit = (e) => {
         e.preventDefault();
-        if (formData.password !== formData.confirmPassword){
-            alert('Passwords do not match!')
-            return;
+        if (formData.password !== formData.confirmPassword) {
+          alert('Passwords do not match!');
+          return;
         }
+    
+        const courseDetails = courses.find(c => c.title === formData.course);
+        setUserData({
+          name: formData.name,
+          course: courseDetails
+        });
+    
         console.log('Signing up with:', formData);
-    }
+        navigate('/dashboard');
+      };
+
+      setUserData({
+        name: formData.name,
+        course: formData.course,
+        enrolledAt: new Date().toLocaleDateString() // or .toISOString()
+      });
   return (
     <div className='auth-container'>
         <h2>Join LearnFlow</h2>
@@ -114,11 +130,13 @@ const SignUpForm = () => {
             required
             >
             <option value="">Select Course</option>
-            <option value="gmail">Gmail Basics</option>
-            <option value="docs">Google Docs</option>
-            <option value="ai">AI Tools</option>
-            <option value="google-drive">Google Drive and File Storage</option>
-            <option value="research">Internet Research Skill</option>
+            <option value="Gmail Basics">Gmail Basics</option>
+            <option value="Google Docs Mastery">Google Docs</option>
+            <option value="Introduction To AI Tools">AI Tools</option>
+            <option value="Google Drive and File Storage">Google Drive and File Storage</option>
+            <option value="Internet Research skills">Internet Research Skill</option>
+            <option value="Online Safety and Security">Online Safety and Security</option>
+
         </select>
 
             <select 

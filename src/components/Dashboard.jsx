@@ -1,21 +1,25 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import courseImage from '../assets/L_M_N.webp'
 import '../styles/Dashboard.css'
+import { UserContext } from './UserContext'
 
 const Dashboard = () => {
+  const {userData} = useContext(UserContext);
+
+  if (!userData) return <p>No user Data. please sign up</p>
   return (
     <div className='dashboard-container'>
         <div className="user-info">
-            <h2>Welcome: User Name</h2>
-            <p> <strong>Your Course:</strong> Chosen Course by the Learner</p>
-            <p> <strong>Course Description:</strong> Description of the Chosen Course</p>
-            <p>Enrolled on: April 28, 2025</p>
+            <h2>Welcome: {userData.name}</h2>
+            <p> <strong>Your Course:</strong>{userData.course.title}</p>
+            <p> <strong>Course Description:</strong>{userData.course.description}</p>
+            <p>Enrolled on: {userData.enrolledAt}</p>
             <p>Course Duration: 4 Weeks</p>
             <p>Progress: 0% Completed</p>
-            <p>Status: Not Started</p>
+            <p>Status:<italic>Not Started</italic> </p>
         </div>
         <div className="course-info">
-            <img src={courseImage} alt="course-image" />
+            <img src={userData.course.image} alt="course-image" />
             <p>course modules: Number of Modules</p>
             <button>Start Course</button>
         </div>
