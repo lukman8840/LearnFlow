@@ -7,17 +7,14 @@ import GoogleImage from '../assets/Google_docs.jpeg'
 import InternetImage from '../assets/internet_research.jpeg';
 import AIImage from '../assets/AI-Tools.jpeg';
 import GoogleDriveImage from '../assets/file_storage.png';
-import OnlineImage from '../assets/Online_safety.png'
-
+import OnlineImage from '../assets/Online_safety.png';
 
 
 const SignUpForm = () => {
+    // Used to navigate to other routes
     const navigate = useNavigate()
-
-    const {setUserData} = useContext(UserContext)
-    const [name, setName] = useState('');
-    const [selectedCourse, setSelectedCourse] = useState('');
-
+    const {setUserData} = useContext(UserContext) // to access global user context
+    // Course options available for selection
     const courses = [
         {
             title: "Gmail Basics",
@@ -41,7 +38,7 @@ const SignUpForm = () => {
         },
         {
             title: "Google Drive and File Storage",
-            description: "earn how to organize, store, and access files anywhere, safely.",
+            description: "Learn how to organize, store, and access files anywhere, safely.",
             image: `${GoogleDriveImage}`
         },
         {
@@ -51,6 +48,7 @@ const SignUpForm = () => {
         }
 
     ]
+      // Form data state
     const [formData, setFormData] = useState({
         name: '',
         email: '',
@@ -60,6 +58,7 @@ const SignUpForm = () => {
         password: '',
         confirmPassword: ''
     });
+    // Handles form field updates
     const handleChange = (e) => {
         setFormData(prev => ({
             ...prev,
@@ -67,27 +66,26 @@ const SignUpForm = () => {
 
         }))
     }
-
-    
+     // Handles form submission
     const handleSubmit = (e) => {
-        e.preventDefault();
+        e.preventDefault(); // Prevent page reload
+         // Simple password match validation
         if (formData.password !== formData.confirmPassword) {
           alert('Passwords do not match!');
           return;
         }
-    
+    // Get selected course details based on course title
         const courseDetails = courses.find(c => c.title === formData.course);
+         // Save user data globally via context
         setUserData({
           name: formData.name,
           course: courseDetails,
-          enrolledAt: new Date().toLocaleDateString()
+          enrolledAt: new Date().toLocaleDateString()  // Save current date
         });
-    
         console.log('Signing up with:', formData);
-        navigate('/dashboard');
+        navigate('/dashboard');// Redirect to dashboard after successful sign up
       };
-
-      
+        // JSX output (UI part)
   return (
     <div className='auth-container'>
         <h2>Join LearnFlow</h2>
@@ -157,6 +155,7 @@ const SignUpForm = () => {
             onChange={handleChange}
             required
         />
+        {/* Password Strength Hint */}
             {formData.password && (
                 <small>
                     {formData.password.length < 8

@@ -2,12 +2,15 @@ import React, { useState } from 'react'
 import { Link } from 'react-router-dom';
 
 const ForgetPassword = () => {
+     // State to hold the entered email
     const [email, setEmail] = useState('');
+     // State to track if the form has been submitted
     const [submitted, setSubmitted] = useState(false);
 
+      // Handle form submission
     const handleSubmit = (e) => {
         e.preventDefault();
-        setSubmitted(true);
+        setSubmitted(true); // Set the submission
         console.log("Request Submitted to", email)
     }
   return (

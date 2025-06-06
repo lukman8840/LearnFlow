@@ -5,21 +5,24 @@ import { Link, useNavigate } from 'react-router-dom';
 const LoginForm = () => {
     const navigate = useNavigate()
 
+     // State for storing email and password inputs
     const [formData, setFormData] = useState({
         email: '',
         password: ''
     });
 
+     // Function to handle form input changes and update the state
     const handleChange = (e) => {
         setFormData(prev => ({
             ...prev,
-            [e.target.name]: e.target.value
+            [e.target.name]: e.target.value // Update the specific field (email or password)
         }));
     };
+    // Function to handle form submission
     const handleSubmit = (e) => {
-        e.preventDefault();
-        console.log('logging in with:', formData)
-        navigate('/dashboard')
+        e.preventDefault();// Prevent default page reload on form submit
+        console.log('logging in with:', formData) // Log submitted data for testing
+        navigate('/dashboard')// Redirect user to dashboard page
         
     }
 
@@ -53,4 +56,4 @@ const LoginForm = () => {
   )
 }
 
-export default LoginForm
+export default LoginForm // Export the component so it can be used elsewhere

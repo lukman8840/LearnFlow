@@ -17,9 +17,12 @@
     text-align: left;
 }
 .user-info h2 {
+    width: 500px;
+    text-align: justify;
     color: #444;
     font-size: 24px;
     margin-bottom: 10px;
+    padding: 10px;
 }
 .user-info p {
     margin: 12px 0;
@@ -55,4 +58,9 @@
 }
 .course-info button:hover {
     background-color: #45a049;
+}
+ul li{
+    margin: 2rem;
+    padding: 5px;
+    margin: 10px;
 }

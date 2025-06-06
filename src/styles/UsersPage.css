@@ -1,0 +1,52 @@
+.users-dashboard {    
+    display: flex;
+    border: 1px solid #ccc;
+    height: 100vh;
+}
+.users-info {
+    width: 600px;
+    margin: 2rem;
+    margin-left: 5rem;
+    border-right: 1px solid #ccc;
+}
+.profile-pic-section{
+    display: flex;
+    justify-content: space-between;
+    margin: 1rem;
+    position: relative;
+}
+.profile-pic-wrapper{
+    width: 150px;
+    height: 150px;
+    background-color: red;
+    border-radius: 50%;
+    object-fit: cover;
+    display: inline-block;
+    position: relative;
+}
+p{
+    text-align: justify;
+    margin: 10px auto;
+    padding: 10px;
+    line-height: 0.6;
+}
+.action-buttons{
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 10px 15px;
+}
+.action-buttons button {
+    padding: 12px 20px;
+    border: 1px solid #ccc;
+    color: #fff;
+    background-color: #4f8ef7;
+    border-radius: 5px;
+}
+.course-content{
+    display: flex;
+    justify-content: space-between;
+}
+button{
+    margin-bottom: 2rem;
+}

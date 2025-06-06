@@ -12,7 +12,7 @@ const Contact = () => {
           <div className="contact-info">
             <h3>Get in Touch</h3>
             <p>Email: support@learnflow.com</p>
-            <p>Phone: +234 704 575 7846</p>
+            <p>Phone: +234 704 575 8446</p>
             <p>Location: Abuja, Nigeria</p>
           </div>
 

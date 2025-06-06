@@ -9,22 +9,17 @@ const Navbar = () => {
   const [showMenu, setShowMenu] = useState(false)
   const [showDropdown, setShowDropdown] = useState(false)
 
-
   const toggelMenu = () => {
     setShowMenu(prev => !prev);
   }
-
   return (
     <div className='nav-container'>
       <div className="left-section">
         <div className="logo">
-
            <h1 onClick={() => navigate('./')}>LearnFlow</h1>
-          
         </div>
         <div className={`nav-links ${showMenu ? 'show' : ''}`}>
             <Link to="/">Home</Link>
-
             <div className='dropdown'
               onClick={() => setShowDropdown(prev => !prev)}
             >
@@ -52,10 +47,8 @@ const Navbar = () => {
         <button className="menu-toggle" onClick={toggelMenu}>
           {showMenu ? 'X' : '☰'}
         </button>
-
       </div>
     </div>
   )
 }
-
 export default Navbar;

@@ -9,6 +9,8 @@ import Navbar from './components/Navbar';
 import ForgetPassword from './components/ForgetPassword';
 import Dashboard from './components/Dashboard';
 import { UserProvider } from './components/UserContext';
+import LearnMore from './components/LearnMore';
+import UsersPage from './components/UsersPage';
 
 function App() {
   return (
@@ -23,6 +25,8 @@ function App() {
         <Route path='/signup' element={<SignUpForm />}/>
         <Route path='/forget-password' element={<ForgetPassword />}/>
         <Route path='/dashboard' element={<Dashboard />} />
+        <Route path='/learnmore' element={<LearnMore />} />
+        <Route path='/userspage' element={<UsersPage />} />
       </Routes>      
     </Router>
     </UserProvider>
