@@ -37,17 +37,56 @@ const UsersPage = () => {
       <CourseInfo>
         <CourseContent>
           <h2>Course Modules</h2>
-          <button className='completed'>Completed</button>
         </CourseContent>
         <Modules>
-          <li>List of Modules Of The Course</li>
-          <li>List of Modules Of The Course</li>
-          <li>List of Modules Of The Course</li>
-          <li>List of Modules Of The Course</li>
-          <li>List of Modules Of The Course</li>
-          <li>List of Modules Of The Course</li>
-          <li>List of Modules Of The Course</li>
-          <li>List of Modules Of The Course</li>
+          <li>
+            <label>
+              <input type='checkbox'/>
+                List of Modules Of The Course
+            </label>
+            </li>
+          <li>
+             <label>
+              <input type='checkbox'/>
+                List of Modules Of The Course
+            </label>
+            </li>
+          <li>
+            <label>
+              <input type='checkbox'/>
+                List of Modules Of The Course
+            </label>
+            </li>
+          <li>
+           <label>
+              <input type='checkbox'/>
+                List of Modules Of The Course
+            </label>
+            </li>
+          <li>
+            <label>
+              <input type='checkbox'/>
+                List of Modules Of The Course
+            </label>
+            </li>
+          <li>
+           <label>
+              <input type='checkbox'/>
+                List of Modules Of The Course
+            </label>
+            </li>
+          <li>
+           <label>
+              <input type='checkbox'/>
+                List of Modules Of The Course
+            </label>
+            </li>
+          <li>
+            <label>
+              <input type='checkbox'/>
+                List of Modules Of The Course
+            </label>
+          </li>
         </Modules>
         <button onClick={() => navigate('./start-course')}>Start Course</button>
       </CourseInfo>
@@ -149,22 +188,59 @@ const ActionButtons = styled.div`
   }
 `
 
-const CourseInfo = styled.div``
+const CourseInfo = styled.div`
+  padding: 5px;
+ margin: 0 auto;
+  text-align: center;
+
+
+  button{
+    color: #fff;
+    padding: 15px 25px;
+    border: none;
+    background-color: #4f8ef7;
+    border-radius: 8px;
+  }
+`
 
 const CourseContent = styled.div`
   display: flex;
   justify-content: space-between;
+  text-align: justify;
 
   button {
     margin-bottom: 2rem;
+  }
+
+  h2{
+    color: #4f8ef7;
+    margin: 0 auto;
+    padding: 10px 15px;
   }
 `
 
 const Modules = styled.ul`
   li {
+    display: flex;
+    gap: 10px;
+    align-items: center;
     text-align: justify;
     margin: 10px auto;
     padding: 10px;
     line-height: 1.6;
+    list-style: none;
   }
-`
+
+  label {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+  }
+  
+  input[type='checkbox'] {
+  width: 18px;
+  height: 18px;
+  accent-color: #4f8ef7;
+}
+`;
