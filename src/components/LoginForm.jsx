@@ -68,7 +68,7 @@ const AuthLinkContainer = styled.div`
   color: #444;
 
   @media (max-width: 768px) {
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
     text-align: center;
   }

@@ -4,6 +4,12 @@ const LearnContent = styled.div`
   max-width: 600px;
   margin: auto;
   padding: 30px;
+
+  @media (max-width: 768px){
+    width: 450px;
+    margin: 0 auto;
+    /* background-color: red; */
+  }
 `;
 
 const Title = styled.h2`

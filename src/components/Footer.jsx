@@ -6,6 +6,11 @@ const FooterWrapper = styled.footer`
   padding: 50px 20px 20px;
   background-color: #f8f8f8;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+
+   @media (max-width: 768px){
+    width: 500px;
+    /* background-color: red; */
+  }
 `;
 
 const FooterContainer = styled.div`
@@ -15,6 +20,13 @@ const FooterContainer = styled.div`
   margin: 0 auto;
   flex-wrap: wrap;
   gap: 20px;
+
+@media (max-width: 768px){
+  display: flex;
+  flex-direction: column;
+  max-width: 100%;
+  /* background-color: red; */
+}
 `;
 
 const Section = styled.div`
@@ -32,15 +44,16 @@ const Section = styled.div`
     color: #051944;
     margin-bottom: 8px;
   }
+
 `;
 
 const FooterLinks = styled.ul`
   list-style: none;
   padding: 0;
+  
 
   li {
     margin-bottom: 10px;
-
     a {
       color: #051944;
       font-weight: bold;

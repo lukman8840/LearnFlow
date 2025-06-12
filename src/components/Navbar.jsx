@@ -61,9 +61,9 @@ export const NavContainer = styled.div`
   box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
   padding: 10px 20px;
   @media (max-width: 768px) {
-    margin: 20px;
+    min-width: 500px;
+    margin: 10px;
     flex-direction: row;
-    align-items: flex-start;
   }
 `;
 
@@ -92,16 +92,18 @@ export const NavLinks = styled.div`
 
   @media (max-width: 768px) {
     display: none;
+    width: 100%;
     position: fixed;
     left: 15px;
-    top: 70px;
+    top: 75px;
     flex-direction: column;
     width: 95%;
-    gap: 20px;
+    gap: 10px;
     font-size: 24px;
     background-color: #fff;
+    color: #4f8ef7;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-    z-index: 999;
+    z-index: 1;
   }
 `;
 

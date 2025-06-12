@@ -88,7 +88,7 @@ const UsersPage = () => {
             </label>
           </li>
         </Modules>
-        <button onClick={() => navigate('./start-course')}>Start Course</button>
+        <StartButton onClick={() => navigate('./start-course')}>Start Course</StartButton>
       </CourseInfo>
     </UsersDashboard>
   )
@@ -187,12 +187,10 @@ const ActionButtons = styled.div`
     cursor: pointer;
   }
 `
-
 const CourseInfo = styled.div`
   padding: 5px;
- margin: 0 auto;
   text-align: center;
-
+  background-color: red
 
   button{
     color: #fff;
@@ -207,22 +205,21 @@ const CourseContent = styled.div`
   display: flex;
   justify-content: space-between;
   text-align: justify;
-
+  margin-top: 10px;
+ 
   button {
     margin-bottom: 2rem;
   }
 
   h2{
     color: #4f8ef7;
-    margin: 0 auto;
-    padding: 10px 15px;
+    padding: 10px;
   }
 `
-
 const Modules = styled.ul`
   li {
     display: flex;
-    gap: 10px;
+    gap: 0px;
     align-items: center;
     text-align: justify;
     margin: 10px auto;
@@ -244,3 +241,13 @@ const Modules = styled.ul`
   accent-color: #4f8ef7;
 }
 `;
+const StartButton = styled.button`
+  padding: 13px 18px;
+  border: none;
+  background-color: #4f8ef7;
+  border-radius: 8px;
+  margin: 0 auto;
+  margin-bottom: 10px;
+  color: #fff;
+
+`

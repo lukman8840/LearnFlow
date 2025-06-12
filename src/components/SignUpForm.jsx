@@ -167,7 +167,13 @@ const AuthContainer = styled.div`
     display: block;
     text-align: left;
     margin-bottom: 1rem;
-  }
+ 
+ }
+
+   @media (max-width: 768px){
+      width: 450px;
+      margin: 15px;
+    }
 `;
 
 const AuthForm = styled.form`
@@ -182,6 +188,7 @@ const AuthForm = styled.form`
     font-size: 1rem;
     width: 100%;
     box-sizing: border-box;
+
   }
 
   button {

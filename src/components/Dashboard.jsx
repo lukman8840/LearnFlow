@@ -14,6 +14,15 @@ const Container = styled.div`
   border: 1px solid #ddd;
   border-radius: 10px;
   background-color: #f9f9f9;
+
+
+  @media (max-width: 768px){
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    /* margin-left: 40px; */
+  }
 `;
 
 const UserInfo = styled.div`

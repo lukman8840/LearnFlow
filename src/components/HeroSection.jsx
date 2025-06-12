@@ -111,6 +111,14 @@ const HeroContainer = styled.div`
   flex-direction: column;
   padding: 20px 40px;
   background-color: #f8f8f8;
+
+
+  @media  (max-width: 768px) {
+    /* background-color: red; */
+    width: 460px;
+    align-items: center;
+    justify-content: center
+  }
 `;
 
 const Content = styled.div`
@@ -178,6 +186,15 @@ const CoursesGrid = styled.section`
   gap: 20px;
   padding: 40px;
   background-color: #f7f7f7;
+
+  @media (max-width: 768px) {
+    /* background-color: red; */
+    padding: 20px;
+    width: 100%;
+    gap: 10px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
 `;
 
 const CourseCard = styled.div`
@@ -186,6 +203,13 @@ const CourseCard = styled.div`
   padding: 20px;
   box-shadow: 0 2px 10px rgba(0,0,0,0.1);
   text-align: center;
+
+
+  @media (max-width: 768px){
+    /* background-color: red; */
+    width: 200px;
+    height: fit-content;
+  }
 `;
 
 const CourseImage = styled.img`
@@ -194,6 +218,11 @@ const CourseImage = styled.img`
   object-fit: cover;
   border-radius: 8px;
   margin-bottom: 16px;
+
+  @media (max-width: 768px){
+    width: 180px;
+    height: 80px;
+  }
 `;
 
 const EnrollButton = styled.button`
@@ -233,6 +262,12 @@ const StepsGrid = styled.div`
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 30px;
+
+
+  @media (max-width: 768px){
+    display: grid;
+    grid-template-columns: repeat(1,1fr);
+  }
 `;
 
 const StepCard = styled.div`
